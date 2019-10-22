@@ -5,7 +5,7 @@ class Patient
 
   def initialize(name)
     @name = name
-    @@all = self
+    @@all << self
   end
 
   def self.all
@@ -17,15 +17,16 @@ class Patient
   end
 
   def appointments
-    Appointment.all.select do |appointment|
-      appointment.patient == self
-      appointment
+    Appointment.all.select do |appt|
+      appt.patient == self
+      appt
     end
   end
 
   def doctors
-    Appointment.all.map do |appointment|
+    appointments.map do |appointment|
       appointment.doctor
     end
   end
+
 end
