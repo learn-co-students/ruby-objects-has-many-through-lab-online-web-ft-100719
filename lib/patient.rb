@@ -1,7 +1,7 @@
 class Patient
 
   attr_reader :name, :appointment, :doctor
-  all = []
+  @@all = []
 
   def initialize(name)
     @name = name
@@ -17,7 +17,7 @@ class Patient
   end
 
   def appointments
-    Appointment.all.select do |appt|
+    Appointment.all.collect do |appt|
       appt.patient == self
     end
   end
