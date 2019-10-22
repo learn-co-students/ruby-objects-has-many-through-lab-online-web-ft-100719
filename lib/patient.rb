@@ -17,7 +17,7 @@ class Patient
   end
 
   def appointments
-    Appointment.all.collect do |appt|
+    Appointment.all.each do |appt|
       appt.patient == self
     end
   end
