@@ -27,7 +27,7 @@ def add_appointment(appointment)
   end
 
 def doctors
-  self.appointents.collect do |appointment|
+  self.appointments.collect do |appointment|
     appointment.doctor
   end
 end
