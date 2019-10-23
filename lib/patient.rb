@@ -13,12 +13,13 @@ class Patient
   end
 
   def new_appointment(doctor, date)
-    Appointment.new(self, doctor, date)
+    Appointment.new(date, self, doctor)
   end
 
   def appointments
-   Appointment.all.each do |appt|
+   Appointment.all.select do |appt|
       appt.patient == self
+      appt
     end
   end
 
