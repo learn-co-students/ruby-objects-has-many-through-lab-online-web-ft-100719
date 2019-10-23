@@ -4,7 +4,7 @@ class Patient
   @@all = []
 
   def initialize(name)
-    @name = name
+    @name = self
     @@all << self
   end
 
@@ -12,14 +12,12 @@ class Patient
     @@all
   end
 
-  def new_appointment(doctor, date)
+  def new_appointment(date, doctor)
     Appointment.new(self, doctor, date)
   end
 
   def appointments
-    Appointment.all.each do |appt|
-      appt.patient == self
-    end
+    appointments = Appointment.all.each { |appt| appt.patient == self }
   end
 
   def doctors
