@@ -14,7 +14,13 @@ class Doctor
   end
 
   def new_appointment(name, date)
+    appointment = Appointment.new(name, self, date)
+  end
 
+  def appointments
+    Appointment.all.each do |appointment|
+      appointment.doct == self
+    end
   end
 
 end
