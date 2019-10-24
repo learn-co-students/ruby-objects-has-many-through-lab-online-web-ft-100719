@@ -19,7 +19,7 @@ class Doctor
 
   def appointments
     Appointment.all.each do |appointment|
-      appointment.doct == self
+      appointment.doctor == self
     end
   end
 
