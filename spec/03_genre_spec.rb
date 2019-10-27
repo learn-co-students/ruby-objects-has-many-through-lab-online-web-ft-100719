@@ -19,19 +19,7 @@ describe 'Genre' do
     end
   end
 
-  describe '.all' do
-    it 'knows about all genre instances' do
-      rap = Genre.new('rap')
-      blues = Genre.new('blues')
-      rock = Genre.new('rock')
-      folk = Genre.new('folk')
-
-      expect(Genre.all).to include(rock)
-      expect(Genre.all).to include(folk)
-      expect(Genre.all).to include(rap)
-      expect(Genre.all).to include(blues)
-    end
-  end
+  
 
   describe '#artists' do
     it 'has many artists, through songs' do
