@@ -14,4 +14,3 @@ class Appointment
     @@all
   end
 end
-© 2019 GitH
